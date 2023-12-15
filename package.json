@@ -1,0 +1,43 @@
+{
+  "name": "duel",
+  "version": "1.0.0",
+  "description": "Duel (a shooter game)",
+  "homepage": "https://github.com/InoreNeronI/duel",
+  "scripts": {
+    "build": "parcel build src/index.html --public-url /duel",
+    "postbuild": "cp -nrv sketch dist",
+    "prestart": "rm -fr .parcel-cache dist && eslint --fix . && prettier --write . && mkdir dist && npm run postbuild",
+    "start": "parcel serve src/index.html --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InoreNeronI/duel.git"
+  },
+  "keywords": [],
+  "author": "Martin Mozos <martinmozos@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/InoreNeronI/duel/issues"
+  },
+  "dependencies": {
+    "processing-js": "^1.6.6"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.10.3",
+    "@parcel/validator-eslint": "^2.10.3",
+    "eslint": "^7.32.0",
+    "parcel": "^2.10.3",
+    "prettier": "3.1.1",
+    "prettier-plugin-css-order": "^2.0.1"
+  },
+  "alias": {
+    "processing-js": {
+      "global": "Processing"
+    }
+  },
+  "targets": {
+    "default": {
+      "context": "browser"
+    }
+  }
+}
